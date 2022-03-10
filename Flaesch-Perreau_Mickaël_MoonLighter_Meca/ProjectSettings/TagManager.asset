@@ -1,0 +1,89 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - ID01
+  - ID02
+  - ID03
+  - ID04
+  - ID05
+  - ID06
+  - ID07
+  - ID08
+  - ID09
+  - DoorID1
+  - DoorID2
+  - SPD01
+  - SPD02
+  - SPD03
+  - SPD04
+  - DoorID3
+  - DoorID4
+  - PromotID01
+  - PromotID02
+  - PromotID03
+  - PromotID04
+  - Client
+  - Promot
+  - Promot2
+  - Promot3
+  - Promot4
+  - CaisseE
+  - SP
+  - SPID01
+  - SPID02
+  - SPID03
+  - SPID04
+  - SPID05
+  - SPID06
+  - SPID07
+  - SPID08
+  - SPID09
+  - SPID10
+  - SPID11
+  - SPID12
+  - CWPID01
+  - CWPID02
+  - CWPID03
+  - CWPID04
+  - CWPID05
+  - CWPID06
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - PostProcessing
+  - Water
+  - UI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
