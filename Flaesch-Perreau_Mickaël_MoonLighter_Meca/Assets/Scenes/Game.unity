@@ -16583,7 +16583,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PrefabClient: {fileID: 781915829883038881, guid: a0a7834441e1155479c5f0f8b3c053e1, type: 3}
   ContainerClient: {fileID: 1662673750}
-  nbClientMax: 1
+  nbClientMax: 4
   OneSpawnByOneClient: 0
 --- !u!1 &1577503864
 GameObject:
@@ -18417,6 +18417,7 @@ MonoBehaviour:
   cWP2Reaching: 0
   cWP3Reaching: 0
   cWP4Reaching: 0
+  nbObjetInHand: 0
   interactIsPossible: 0
   promotInventoryOpen: 0
   chestInventoryOpen: 0

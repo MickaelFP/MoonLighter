@@ -8,6 +8,7 @@ public class ClientSpawning : MonoBehaviour
     [SerializeField] Transform ContainerClient;
 
     [SerializeField] int nbClientMax = 4;
+    private float waitingTime = 2f;
 
     public bool OneSpawnByOneClient = false;
 
@@ -24,8 +25,9 @@ public class ClientSpawning : MonoBehaviour
         {
             if (GameManager.Instance.nbClientInShop < nbClientMax & GameManager.Instance.nbClientMaxDay1 < 10)
             {
+                if (GameManager.Instance.firstClientSpawned == false) waitingTime = 2f;
                 OneSpawnByOneClient = true;
-                StartCoroutine(WaitAndStart1(5f));
+                StartCoroutine(WaitAndStart1(waitingTime));
             }
         }
     }
@@ -37,6 +39,7 @@ public class ClientSpawning : MonoBehaviour
         {
             Instantiate(PrefabClient, ContainerClient);
             if (GameManager.Instance.day == 1) GameManager.Instance.nbClientMaxDay1 += 1;
+            waitingTime = 5f;
         }
     }
 }

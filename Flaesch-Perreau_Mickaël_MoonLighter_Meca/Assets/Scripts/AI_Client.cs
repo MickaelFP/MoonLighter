@@ -64,11 +64,15 @@ public class AI_Client : MonoBehaviour
     bool step14 = false;
     //bool step15 = false;
     bool stepA = false;
+    bool stepA2 = false;
     bool stepB = false;
     bool stepC = false;
     bool stepD1 = false;
     bool stepD2 = false;
     bool stepD3 = false;
+    bool stepD4 = false;
+    bool stepD5 = false;
+    bool stepD6 = false;
 
     //public Transform goal;
     //NavMeshAgent agent;
@@ -81,7 +85,7 @@ public class AI_Client : MonoBehaviour
         ClientRgb = GetComponent<Rigidbody>();
         GameManager.Instance.nbClientInShop += 1;
         GameManager.Instance.firstClientSpawned = true;
-        clientIDObjetSearching = /*Random.Range(1, 5)*/1;
+        clientIDObjetSearching = Random.Range(1, 5);
         unit = Random.Range(20, 1000);
         GameManager.Instance.clientID += 1;
         personalID = GameManager.Instance.clientID;
@@ -118,26 +122,10 @@ public class AI_Client : MonoBehaviour
         if (other.tag == "PromotID03") objetContactID = 3;
         if (other.tag == "PromotID04") objetContactID = 4;
 
-        if (other.tag == "CWPID01")
-        { 
-            GameManager.Instance.cWP1ID = personalID;
-            GameManager.Instance.cWP1Reaching = 0;
-        }
-        if (other.tag == "CWPID02")
-        { 
-            GameManager.Instance.cWP2ID = personalID;
-            GameManager.Instance.cWP2Reaching = 0;
-        }
-        if (other.tag == "CWPID03") 
-        { 
-            GameManager.Instance.cWP3ID = personalID;
-            GameManager.Instance.cWP3Reaching = 0;
-        }
-        if (other.tag == "CWPID04") 
-        {
-            GameManager.Instance.cWP4ID = personalID;
-            GameManager.Instance.cWP4Reaching = 0;
-        }
+        if (other.tag == "CWPID01") GameManager.Instance.cWP1ID = personalID;
+        if (other.tag == "CWPID02") GameManager.Instance.cWP2ID = personalID;
+        if (other.tag == "CWPID03") GameManager.Instance.cWP3ID = personalID;
+        if (other.tag == "CWPID04") GameManager.Instance.cWP4ID = personalID;
 
         if (other.tag == "SPID01") GameManager.Instance.sP1ID = personalID;
         if (other.tag == "SPID02") GameManager.Instance.sP2ID = personalID;
@@ -158,24 +146,27 @@ public class AI_Client : MonoBehaviour
         if (other.tag == "PID02" & objetContactID == 2) objetContactID = 0;
         if (other.tag == "PID03" & objetContactID == 3) objetContactID = 0;
         if (other.tag == "PID04" & objetContactID == 4)  objetContactID = 0;
-
-        if (other.tag == "CWPID01") GameManager.Instance.cWP1ID = 0;
-        if (other.tag == "CWPID02") GameManager.Instance.cWP2ID = 0;
-        if (other.tag == "CWPID03") GameManager.Instance.cWP3ID = 0;
-        if (other.tag == "CWPID04") GameManager.Instance.cWP4ID = 0;
-
-        /*if (other.tag == "SPID01") GameManager.Instance.sP1ID = "Default";
-        if (other.tag == "SPID02") GameManager.Instance.sP2ID = "Default";
-        if (other.tag == "SPID03") GameManager.Instance.sP3ID = "Default";
-        if (other.tag == "SPID04") GameManager.Instance.sP4ID = "Default";
-        if (other.tag == "SPID05") GameManager.Instance.sP5ID = "Default";
-        if (other.tag == "SPID06") GameManager.Instance.sP6ID = "Default";
-        if (other.tag == "SPID07") GameManager.Instance.sP7ID = "Default";
-        if (other.tag == "SPID08") GameManager.Instance.sP8ID = "Default";
-        if (other.tag == "SPID09") GameManager.Instance.sP9ID = "Default";
-        if (other.tag == "SPID10") GameManager.Instance.sP10ID = "Default";
-        if (other.tag == "SPID11") GameManager.Instance.sP11ID = "Default";
-        if (other.tag == "SPID12") GameManager.Instance.sP12ID = "Default";*/
+;
+        if (other.tag == "CWPID01")
+        {
+            GameManager.Instance.cWP1ID = 0;
+            GameManager.Instance.cWP1Reaching = 0;
+        }
+        if (other.tag == "CWPID02")
+        {
+            GameManager.Instance.cWP2ID = 0;
+            GameManager.Instance.cWP2Reaching = 0;
+        }
+        if (other.tag == "CWPID03")
+        {
+            GameManager.Instance.cWP3ID = 0;
+            GameManager.Instance.cWP3Reaching = 0;
+        }
+        if (other.tag == "CWPID04")
+        {
+            GameManager.Instance.cWP4ID = 0;
+            GameManager.Instance.cWP4Reaching = 0;
+        }
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -250,30 +241,30 @@ public class AI_Client : MonoBehaviour
 
                 if (transform.position.x >= -9f)
                 {
-                    //if (SPID_4 == personalID) SPID_4 = 0;
                     step7 = true;
-                    if (SPID_1 != personalID) transform.position = Vector3.MoveTowards(transform.position, SavePos1, StartSpeed * Time.deltaTime);
+                    if (SPID_1 != personalID) 
+                        transform.position = Vector3.MoveTowards(transform.position, SavePos1, StartSpeed * Time.deltaTime);
                     else transform.position = Vector3.MoveTowards(transform.position, SavePos1_2, StartSpeed * Time.deltaTime);
                 }
                 if (transform.position.x <= -15f)
                 {
-                    //if (SPID_1 == personalID) SPID_1 = 0;
                     step8 = true;
-                    if (SPID_2 != personalID) transform.position = Vector3.MoveTowards(transform.position, SavePos2, StartSpeed * Time.deltaTime);
+                    if (SPID_2 != personalID) 
+                        transform.position = Vector3.MoveTowards(transform.position, SavePos2, StartSpeed * Time.deltaTime);
                     else transform.position = Vector3.MoveTowards(transform.position, SavePos2_2, StartSpeed * Time.deltaTime);
                 }
                 if (transform.position.x <= -9 & transform.position.x >= -15f & transform.position.z <= -3.7f)
                 {
-                    //if (SPID_2 == personalID) SPID_2 = 0;
                     step9 = true;
-                    if (SPID_3 != personalID) transform.position = Vector3.MoveTowards(transform.position, SavePos3, StartSpeed * Time.deltaTime);
+                    if (SPID_3 != personalID) 
+                        transform.position = Vector3.MoveTowards(transform.position, SavePos3, StartSpeed * Time.deltaTime);
                     else transform.position = Vector3.MoveTowards(transform.position, SavePos3_2, StartSpeed * Time.deltaTime);
                 }
                 if (transform.position.x <= -9 & transform.position.x >= -15f & transform.position.z >= 2.3f)
                 {
-                    //if (SPID_3 == personalID) SPID_3 = 0;
                     step10 = true;
-                    if (SPID_4 != personalID) transform.position = Vector3.MoveTowards(transform.position, SavePos4, StartSpeed * Time.deltaTime);
+                    if (SPID_4 != personalID) 
+                        transform.position = Vector3.MoveTowards(transform.position, SavePos4, StartSpeed * Time.deltaTime);
                     else transform.position = Vector3.MoveTowards(transform.position, SavePos4_2, StartSpeed * Time.deltaTime);
                 }
 
@@ -316,9 +307,10 @@ public class AI_Client : MonoBehaviour
             if (transform.position.x <= -15f & transform.position.z < 2.3f & GameManager.Instance.sP10ID != personalID) 
                 transform.position = Vector3.MoveTowards(transform.position, SavePos10.transform.position, speedTemp);
 
-            if (transform.position.x <= -9 & transform.position.x >= -15f & transform.position.z >= 2.3f 
+            else if (transform.position.x <= -9 & transform.position.x >= -15f & transform.position.z >= 2.3f 
                 & GameManager.Instance.sP4ID != personalID) 
                 transform.position = Vector3.MoveTowards(transform.position, SavePos4.transform.position, speedTemp);
+
             else transform.position = Vector3.MoveTowards(transform.position, Hs_S_Door2.transform.position, speedTemp);
             //agent.destination = Hs_S_Door2.transform.position;
         }
@@ -338,44 +330,17 @@ public class AI_Client : MonoBehaviour
     {
         float speedTemp = NormalSpeed * Time.deltaTime;
 
-        if (GameManager.Instance.cWP1ID == personalID || GameManager.Instance.cWP2ID == personalID)
-        {
-            if (GameManager.Instance.cWP1ID == 0)
-            {
-                if (GameManager.Instance.cWP1Reaching == 0 || GameManager.Instance.cWP1Reaching == personalID)
-                {
-                    transform.position = Vector3.MoveTowards(transform.position, CaisseWaitingPos.transform.position, speedTemp);
-                    GameManager.Instance.cWP1Reaching = personalID;
-                    stepA = true;
-                }
-            }
-        }
-        if (GameManager.Instance.cWP3ID == personalID)
-        {
-            if (GameManager.Instance.cWP1ID == 0)
-            {
-                if (GameManager.Instance.cWP2Reaching == 0 || GameManager.Instance.cWP2Reaching == personalID)
-                {
-                    transform.position = Vector3.MoveTowards(transform.position, CaisseWaitingPos2.transform.position, speedTemp);
-                    GameManager.Instance.cWP2Reaching = personalID;
-                    stepB = true;
-                }
-            }
-        }
-        if (GameManager.Instance.cWP4ID == personalID)
-        {
-            if (GameManager.Instance.cWP1ID == 0)
-            {
-                if (GameManager.Instance.cWP3Reaching == 0 || GameManager.Instance.cWP3Reaching == personalID)
-                {
-                    transform.position = Vector3.MoveTowards(transform.position, CaisseWaitingPos3.transform.position, speedTemp);
-                    GameManager.Instance.cWP3Reaching = personalID;
-                    stepC = true;
-                }
-            }
-        }
-        if (GameManager.Instance.cWP1ID != personalID & GameManager.Instance.cWP2ID != personalID & GameManager.Instance.cWP3ID != personalID 
-            & GameManager.Instance.cWP4ID != personalID)
+        ChangingWaitingFillPos(GameManager.Instance.cWP1ID, GameManager.Instance.cWP1ID, ref GameManager.Instance.cWP1Reaching,
+            CaisseWaitingPos.transform.position, CaisseWaitingPos.transform.position, ref stepA);
+        ChangingWaitingFillPos(GameManager.Instance.cWP2ID, GameManager.Instance.cWP1ID, ref GameManager.Instance.cWP1Reaching,
+            CaisseWaitingPos.transform.position, CaisseWaitingPos2.transform.position, ref stepA2);
+        ChangingWaitingFillPos(GameManager.Instance.cWP3ID, GameManager.Instance.cWP2ID, ref GameManager.Instance.cWP2Reaching,
+            CaisseWaitingPos2.transform.position, CaisseWaitingPos3.transform.position, ref stepB);
+        ChangingWaitingFillPos(GameManager.Instance.cWP4ID, GameManager.Instance.cWP3ID, ref GameManager.Instance.cWP3Reaching,
+            CaisseWaitingPos3.transform.position, CaisseWaitingPos4.transform.position, ref stepC);
+
+        if (GameManager.Instance.cWP1ID != personalID & GameManager.Instance.cWP2ID != personalID 
+            & GameManager.Instance.cWP3ID != personalID & GameManager.Instance.cWP4ID != personalID)
         {
             stepD1 = true;
             if (transform.position.x <= -15f & GameManager.Instance.sP10ID != personalID) 
@@ -383,14 +348,40 @@ public class AI_Client : MonoBehaviour
             else
             {
                 stepD2 = true;
-                if (GameManager.Instance.cWP4Reaching == 0 || GameManager.Instance.cWP4Reaching == personalID)
-                {
-                    transform.position = Vector3.MoveTowards(transform.position, CaisseWaitingPos4.transform.position, speedTemp);
-                    GameManager.Instance.cWP4Reaching = personalID;
-                    stepD3 = true;
-                }
+                if (GameManager.Instance.cWP1Reaching == 0 || GameManager.Instance.cWP1Reaching == personalID)
+                    ReachingWaitingFill(ref GameManager.Instance.cWP1Reaching, CaisseWaitingPos.transform.position, ref stepD3);
+                else if (GameManager.Instance.cWP2Reaching == 0 || GameManager.Instance.cWP2Reaching == personalID) 
+                    ReachingWaitingFill(ref GameManager.Instance.cWP2Reaching, CaisseWaitingPos2.transform.position, ref stepD4);
+                else if (GameManager.Instance.cWP3Reaching == 0 || GameManager.Instance.cWP3Reaching == personalID) 
+                    ReachingWaitingFill(ref GameManager.Instance.cWP3Reaching, CaisseWaitingPos3.transform.position, ref stepD5);
+                else if (GameManager.Instance.cWP4Reaching == 0 || GameManager.Instance.cWP4Reaching == personalID) 
+                    ReachingWaitingFill(ref GameManager.Instance.cWP4Reaching, CaisseWaitingPos4.transform.position, ref stepD6);
             }
         }
+    }
+    private void ChangingWaitingFillPos(int CWPID, int CWPID2, ref int CWPReaching, Vector3 CWP1, Vector3 CWP2, ref bool Step)
+    {
+        if (CWPID == personalID)
+        {
+            float speedTemp = NormalSpeed * Time.deltaTime;
+            if (CWPID2 == 0 || CWPID2 == personalID)
+            {
+                if (CWPReaching == 0 || CWPReaching == personalID)
+                {
+                    transform.position = Vector3.MoveTowards(transform.position, CWP1, speedTemp);
+                    CWPReaching = personalID;
+                    Step = true;
+                }
+            }
+            else transform.position = Vector3.MoveTowards(transform.position, CWP2, speedTemp);
+        }
+    }
+    private void ReachingWaitingFill(ref int CWPReaching, Vector3 CWP, ref bool Step)
+    {
+        float speedTemp = NormalSpeed * Time.deltaTime;
+        transform.position = Vector3.MoveTowards(transform.position, CWP, speedTemp);
+        CWPReaching = personalID;
+        Step = true;
     }
 
     private void WaitingToPay()
@@ -437,6 +428,9 @@ public class AI_Client : MonoBehaviour
             Debug.Log("stepD1  " + stepD1);
             Debug.Log("stepD2  " + stepD2);
             Debug.Log("stepD3  " + stepD3);
+            Debug.Log("stepD3  " + stepD4);
+            Debug.Log("stepD3  " + stepD5);
+            Debug.Log("stepD3  " + stepD6);
         }
     
     }

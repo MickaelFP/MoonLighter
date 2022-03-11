@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 781915829883038880}
   - component: {fileID: 781915829883038884}
   - component: {fileID: 781915829883038891}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Client
   m_TagString: Client
   m_Icon: {fileID: 0}
@@ -133,8 +133,6 @@ MonoBehaviour:
   CaisseWaitingPos2: {fileID: 4225926031416020924, guid: b3abe65e3196f7d46a4552fc57fbcd10, type: 3}
   CaisseWaitingPos3: {fileID: 2817696166533044544, guid: b8b1d68a4d9a9244582bb8ff7710e0bf, type: 3}
   CaisseWaitingPos4: {fileID: 209088770772014362, guid: 0d2014803ca3f534d8a385ebb99117f7, type: 3}
-  CaisseWaitingPos5: {fileID: 7889929933874352396, guid: 0b5dccce81b397347a9d77e5e4c0f25e, type: 3}
-  CaisseWaitingPos6: {fileID: 7016465061878610491, guid: 27aba2504b0d7bf4182c1c1ce9f4603d, type: 3}
   SavePos1: {fileID: 6914447982322671483, guid: b28b7d0a5ef44004f986635792582741, type: 3}
   SavePos2: {fileID: 3624354229448072795, guid: e666f151ecf00c64e9d527921468a541, type: 3}
   SavePos3: {fileID: 8954565605208687465, guid: 58d2bd485cb540948accafbd4809ec57, type: 3}
@@ -149,4 +147,10 @@ MonoBehaviour:
   SavePos12: {fileID: 254722713251684364, guid: 25de1a36600f24f47b37d2d07200896e, type: 3}
   StartSpeed: 2
   NormalSpeed: 2
+  objet1Checked: 0
+  objet2Checked: 0
+  objet3Checked: 0
+  objet4Checked: 0
+  leavingShop: 0
+  goingToPay: 0
   clientIDObjetSearching: 0
