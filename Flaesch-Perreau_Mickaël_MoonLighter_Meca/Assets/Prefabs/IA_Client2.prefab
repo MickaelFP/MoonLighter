@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 2486294694783302380}
   - component: {fileID: 2486294694783302381}
   - component: {fileID: 6591264277580796469}
-  - component: {fileID: 2486294694783302386}
-  - component: {fileID: 2486294694783302377}
+  - component: {fileID: -7309528220349918707}
+  - component: {fileID: -3420392633504556631}
   m_Layer: 0
   m_Name: IA_Client2
   m_TagString: Untagged
@@ -116,7 +116,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!195 &2486294694783302386
+--- !u!195 &-7309528220349918707
 NavMeshAgent:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -126,19 +126,19 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 0
-  m_Acceleration: 0
+  m_Speed: 3.5
+  m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 10
+  m_AngularSpeed: 120
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
+  m_Height: 1
+  m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &2486294694783302377
+--- !u!114 &-3420392633504556631
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -147,13 +147,33 @@ MonoBehaviour:
   m_GameObject: {fileID: 2486294694783302387}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 733aeb4e3f3ccbd4681cebc5b73b2329, type: 3}
+  m_Script: {fileID: 11500000, guid: 4065231e30b68da43a4b583374be2397, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CaisseWaitingPos: {fileID: 1010909878748798442, guid: 569706369efc90e48a797bdaa33b23a1, type: 3}
-  Hs_H_Door: {fileID: 4611274526996749405, guid: 201e4cf8e8ea34f43a4238ec3837ebb3, type: 3}
-  Hs_S_Door2: {fileID: 2795129356382665817, guid: 4bb7247c648222644b9abc3ee2bed2a2, type: 3}
+  Hs_H_Door: {fileID: 4611274526996749406, guid: 201e4cf8e8ea34f43a4238ec3837ebb3, type: 3}
+  Hs_S_Door2: {fileID: 2795129356382665818, guid: 4bb7247c648222644b9abc3ee2bed2a2, type: 3}
+  CaisseWaitingPos: {fileID: 1010909878748798443, guid: 569706369efc90e48a797bdaa33b23a1, type: 3}
+  CaisseWaitingPos2: {fileID: 4225926031416020925, guid: b3abe65e3196f7d46a4552fc57fbcd10, type: 3}
+  CaisseWaitingPos3: {fileID: 2817696166533044545, guid: b8b1d68a4d9a9244582bb8ff7710e0bf, type: 3}
+  CaisseWaitingPos4: {fileID: 209088770772014363, guid: 0d2014803ca3f534d8a385ebb99117f7, type: 3}
+  SavePos1: {fileID: 6914447982322671482, guid: b28b7d0a5ef44004f986635792582741, type: 3}
+  SavePos2: {fileID: 3624354229448072792, guid: e666f151ecf00c64e9d527921468a541, type: 3}
+  SavePos3: {fileID: 8954565605208687446, guid: 58d2bd485cb540948accafbd4809ec57, type: 3}
+  SavePos4: {fileID: 1740432740221370540, guid: 65ade8a790c7b7440b59f06ccc61065e, type: 3}
+  SavePos5: {fileID: 2064598412621966429, guid: 11f121abf92fe8f4c82e117d922172d7, type: 3}
+  SavePos6: {fileID: 5737392806168943524, guid: 2fcfa1ec53731054bb533594046645dd, type: 3}
+  SavePos7: {fileID: 8584989320434529414, guid: 8e84dddf66151824f9052d136062db14, type: 3}
+  SavePos8: {fileID: 6579084081648416441, guid: 046879d9c013d214cbd5bd386d222bf4, type: 3}
+  SavePos9: {fileID: 1684485963375439157, guid: 7b060ec24bd5537419a237e734f79d9a, type: 3}
+  SavePos10: {fileID: 5529408667470034627, guid: 86dc7dfb930342f4f808a77bf70b512b, type: 3}
+  SavePos11: {fileID: 8233011893918522940, guid: 6ea9ca5e133e677468da673b3101ea54, type: 3}
+  SavePos12: {fileID: 254722713251684367, guid: 25de1a36600f24f47b37d2d07200896e, type: 3}
   StartSpeed: 1
   NormalSpeed: 1
+  objet1Checked: 0
+  objet2Checked: 0
+  objet3Checked: 0
+  objet4Checked: 0
+  leavingShop: 0
+  goingToPay: 0
   clientIDObjetSearching: 0
-  goal: {fileID: 0}

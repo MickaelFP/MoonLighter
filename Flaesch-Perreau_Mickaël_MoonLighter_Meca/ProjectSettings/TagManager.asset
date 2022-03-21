@@ -50,6 +50,7 @@ TagManager:
   - CWPID04
   - CWPID05
   - CWPID06
+  - Bed
   layers:
   - Default
   - TransparentFX
@@ -58,7 +59,7 @@ TagManager:
   - Water
   - UI
   - IA_Client
-  - 
+  - Interieur
   - 
   - 
   - 

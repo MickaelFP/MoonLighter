@@ -11,6 +11,11 @@ public class Gest_Visibility : MonoBehaviour
     [SerializeField] GameObject Hs_S_Door1;
     [SerializeField] GameObject Hs_S_Door2;
 
+    [SerializeField] GameObject WindowsT1;
+    [SerializeField] GameObject WindowsT2;
+    [SerializeField] GameObject WindowsT3;
+    [SerializeField] GameObject WindowsT4;
+
     public static Gest_Visibility Instance;
     private void Awake()
     {
@@ -60,6 +65,16 @@ public class Gest_Visibility : MonoBehaviour
         CheckSlot.Instance.InHomeChest();
     }
 
+    public void PlayerInventoryVisibility()
+    {
+        GameManager.Instance.playerCanMove = false;
+        Objets.SetActive(true);
+        PlayerInventory.SetActive(true);
+        GameManager.Instance.playerInventoryOpen = true;
+        GameManager.Instance.onlyPlayerInventory = true;
+        CheckSlot.Instance.InGame();
+    }
+
     public void ShopOpenVisibility()
     {
         Hs_S_Door2.SetActive(true);
@@ -73,6 +88,8 @@ public class Gest_Visibility : MonoBehaviour
         {
             if (GameManager.Instance.nbClientInShop == 0)
             {
+                if (GameManager.Instance.timingDay < 4) GameManager.Instance.timingDay += 1;
+                NavMeshAgentSpawning.Instance.nbClientByTime = 0;
                 HouseVisibility();
                 GameManager.Instance.shopClosing = false;
                 GameManager.Instance.firstClientSpawned = false;
@@ -89,6 +106,7 @@ public class Gest_Visibility : MonoBehaviour
     // Lieux
     public void HouseVisibility()
     {
+        GameManager.Instance.gameState = "House";
         GameManager.Instance.playerCanMove = true;
         Objets.SetActive(false);
         PlayerInventory.SetActive(false);
@@ -100,15 +118,37 @@ public class Gest_Visibility : MonoBehaviour
         GameManager.Instance.promotInventoryOpen = false;
         GameManager.Instance.chestInventoryOpen = false;
         GameManager.Instance.HsDoorOpenToClient = false;
+        GameManager.Instance.onlyPlayerInventory = false;
+        TimingDayVisibility();
+    }
+
+    public void TimingDayVisibility()
+    {
+        if (GameManager.Instance.timingDay == 1) WindowsT1.SetActive(true);
+        else WindowsT1.SetActive(false);
+        if (GameManager.Instance.timingDay == 2) WindowsT2.SetActive(true);
+        else WindowsT2.SetActive(false);
+        if (GameManager.Instance.timingDay == 3) WindowsT3.SetActive(true);
+        else WindowsT3.SetActive(false);
+        if (GameManager.Instance.timingDay == 4) WindowsT4.SetActive(true);
+        else WindowsT4.SetActive(false);
     }
 
     public void OutsideVisibility()
     {
         CheckSlot.Instance.InGame();
     }
-
+        
     public void DongeonVisibility()
     {
         CheckSlot.Instance.InGame();
+        GameManager.Instance.gameState = "Dongeon";
+        GameManager.Instance.playerCanMove = true;
+        Objets.SetActive(false);
+        PlayerInventory.SetActive(false);
+        //DongeonChestInventory.SetActive(false);
+        //GameManager.Instance.dongeonChestInventoryOpen = false;
+        GameManager.Instance.playerInventoryOpen = false;
+        GameManager.Instance.onlyPlayerInventory = false;
     }
 }

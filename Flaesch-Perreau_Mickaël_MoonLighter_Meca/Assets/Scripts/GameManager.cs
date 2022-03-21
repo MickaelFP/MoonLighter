@@ -9,7 +9,8 @@ public class GameManager : MonoBehaviour
     public int nbClientInShop = 0;
     public int argentOwned = 0;
     public int day = 1;
-    public int nbClientMaxDay1 = 0;
+    public int timingDay = 1;
+    public int nbClientMaxDay1 = 6;
     public int clientID = 0;
 
     public int sP1ID = 0;
@@ -79,6 +80,8 @@ public class GameManager : MonoBehaviour
     public bool promotInventoryOpen = false;
     public bool chestInventoryOpen = false;
     public bool playerInventoryOpen = false;
+    public bool onlyPlayerInventory = false;
+    public bool dungeonChestInventoryOpen = false;
     public bool IObjetMoving = false;
     public bool HsDoorOpenToClient = false;
     public bool shopClosing = false;
@@ -147,7 +150,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Gest_Visibility.Instance.HouseVisibility();
-        gameState = "In Game";
+        gameState = "House";
     }
      // Pour le déplacment des objets de l'inventaire en MoveToward
     /*void Update()

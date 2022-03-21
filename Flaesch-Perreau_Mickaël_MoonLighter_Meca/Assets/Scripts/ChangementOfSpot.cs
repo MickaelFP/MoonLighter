@@ -167,7 +167,7 @@ public class ChangementOfSpot : MonoBehaviour
         else GameManager.Instance.objet2OnSelling = false;
         if (GameManager.Instance.pSlot3ID != "Default") GameManager.Instance.objet3OnSelling = true;
         else GameManager.Instance.objet3OnSelling = false;
-        if (GameManager.Instance.pSlot3ID != "Default") GameManager.Instance.objet4OnSelling = true;
+        if (GameManager.Instance.pSlot4ID != "Default") GameManager.Instance.objet4OnSelling = true;
         else GameManager.Instance.objet4OnSelling = false;
     }
 }

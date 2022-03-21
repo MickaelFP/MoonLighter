@@ -127,6 +127,21 @@ public class AI_Client : MonoBehaviour
         if (other.tag == "CWPID03") GameManager.Instance.cWP3ID = personalID;
         if (other.tag == "CWPID04") GameManager.Instance.cWP4ID = personalID;
 
+        /*if (other.tag == "SPID01") GameManager.Instance.sP1ID = personalID;
+        if (other.tag == "SPID02") GameManager.Instance.sP2ID = personalID;
+        if (other.tag == "SPID03") GameManager.Instance.sP3ID = personalID;
+        if (other.tag == "SPID04") GameManager.Instance.sP4ID = personalID;
+        if (other.tag == "SPID05") GameManager.Instance.sP5ID = personalID;
+        if (other.tag == "SPID06") GameManager.Instance.sP6ID = personalID;
+        if (other.tag == "SPID07") GameManager.Instance.sP7ID = personalID;
+        if (other.tag == "SPID08") GameManager.Instance.sP8ID = personalID;
+        if (other.tag == "SPID09") GameManager.Instance.sP9ID = personalID;
+        if (other.tag == "SPID10") GameManager.Instance.sP10ID = personalID;
+        if (other.tag == "SPID11") GameManager.Instance.sP11ID = personalID;
+        if (other.tag == "SPID12") GameManager.Instance.sP12ID = personalID;*/
+    }
+    private void OnTriggerStay(Collider other)
+    {
         if (other.tag == "SPID01") GameManager.Instance.sP1ID = personalID;
         if (other.tag == "SPID02") GameManager.Instance.sP2ID = personalID;
         if (other.tag == "SPID03") GameManager.Instance.sP3ID = personalID;
@@ -390,7 +405,7 @@ public class AI_Client : MonoBehaviour
         {
             if (goingToPay == true & GameManager.Instance.cWP1ID == personalID)
             {
-                if (GameManager.Instance.argentToEncaisse == true & objetInHandValue != 0)
+                if (GameManager.Instance.argentToEncaisse == true & objetInHandValue >= 0)
                 {
                     GameManager.Instance.argentOwned += objetInHandValue;
                     GameManager.Instance.nbObjetInHand -= 1;
